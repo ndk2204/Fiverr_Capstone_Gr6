@@ -1,12 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import { BaseTemplate } from "../templates/base";
 import { Suspense, lazy } from "react";
-
-import HomeSkeleton from "src/pages/home/home.skeleton";
-import Men from "src/templates/base/header/men";
-import Woman from "src/templates/base/header/woman";
-import Kid from "src/templates/base/header/kid";
-import Sport from "src/templates/base/header/sport";
+import HeaderIndex from "src/templates/base/header/headerIndex";
+import HeaderDS from "src/templates/base/header/headerDS";
+import HeaderDSplus from "src/templates/base/header/headerDSplus";
 
 const Home = lazy(() => import("../pages/home"));
 const Carts = lazy(() => import("../pages/carts"));
@@ -15,7 +12,6 @@ const Profile = lazy(() => import("../pages/profile"));
 const Register = lazy(() => import("../pages/register"));
 const Search = lazy(() => import("../pages/search"));
 const Detail = lazy(() => import("../pages/detail"));
-const a = 10;
 export const router = createBrowserRouter([
   {
     element: <BaseTemplate />,
@@ -24,37 +20,34 @@ export const router = createBrowserRouter([
         index: true,
         path: "/",
         element: (
-          <Suspense fallback={<HomeSkeleton />}>
+          <>
+            <HeaderIndex />
             <Home />
-          </Suspense>
+          </>
         ),
       },
       {
-        path: "men",
-        element: <Men />,
-      },
-      {
-        path: "woman",
-        element: <Woman />,
-      },
-      {
-        path: "kid",
-        element: <Kid />,
-      },
-      {
-        path: "sport",
-        element: <Sport />,
+        path: "detail/:productId",
+        element: (
+          <>
+          <HeaderDS/>
+            <Detail />
+          </>
+        ),
       },
       {
         path: "carts",
-        element: <Carts/>,
+        element: (
+          <>
+          <HeaderDSplus/>
+            <Carts />
+          </>
+        ),
       },
       {
         path: "login",
         element: (
-          <Suspense fallback={<>Skeleton Login</>}>
-            <Login />
-          </Suspense>
+          <Login />
         ),
       },
       {
@@ -67,12 +60,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "search",
-        element: <Search />,
+        element: <>
+          <HeaderIndex />,
+          <Search />,
+        </>
       },
-      {
-        path: "detail/:productId",
-        element: <Detail />,
-      },
+
     ],
   },
 ]);

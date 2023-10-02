@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { getAllProduct } from "src/services/product.service";
-import HomeCarousel from "./home-carousel";
 import ProductFeature from "./product-feature";
+import HomeCarousel from "./home-carousel";
 
 //Các hook cần sử dụng với redux
 // useSelector: lấy store từ trên redux về
@@ -9,6 +9,7 @@ import ProductFeature from "./product-feature";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "src/redux/config-store";
 import { setListProduct } from "src/redux/slices/product.slice";
+import Footer from "src/templates/base/footer";
 
 function Home() {
   //Chuyển sang dùng useAppSelector (customhook)
@@ -22,17 +23,17 @@ function Home() {
   // Cách 1: mong muốn sử dụng async await - Tạo function
   // useEffect(() => {
   //   const resp = getAllProduct();
-    //(1.a) getAllProduct là function async nên giá trị trả về luôn là một promise nen phai dung;
-    // resp.then((resp) => {
-    //   console.log(resp);
-    // });
+  //(1.a) getAllProduct là function async nên giá trị trả về luôn là một promise nen phai dung;
+  // resp.then((resp) => {
+  //   console.log(resp);
+  // });
 
-    // (1.b)useEffect không cho sử dụng async trực tiếp mà nên tạo 1 hàm rồi gọi await sau đó.
-    // const get = async () => {
-    //   const resp = await getAllProduct();
-    //   console.log(resp);
-    // };
-    // get();
+  // (1.b)useEffect không cho sử dụng async trực tiếp mà nên tạo 1 hàm rồi gọi await sau đó.
+  // const get = async () => {
+  //   const resp = await getAllProduct();
+  //   console.log(resp);
+  // };
+  // get();
   // }, []);
 
   // Cách 2: mong muốn sử dụng async await - IIFE (hàm gọi ngay lập tức)
@@ -42,7 +43,7 @@ function Home() {
       const resp = await getAllProduct();
 
       // dispatch(action) : set lại state trên redux
-      
+
       //1. Tự tạo:
       // const action = {
       //   type: "productSlice/setListProduct",

@@ -19,14 +19,6 @@ export const userLogin = async (data: { email: string; password: string }) => {
 };
 
 export const getUserProfile = async () => {
-  // const resp = await axios({
-  //   url: "https://shop.cyberlearn.vn/api/Users/getProfile",
-  //   method: "post",
-  //   headers: {
-  //     Authorization: `Bearer ${getLocalStorage(ACCESS_TOKEN)}`,
-  //   },
-  // });
-
   const resp = await axiosWithAuth({
     url: "/Users/getProfile",
     method: "post",

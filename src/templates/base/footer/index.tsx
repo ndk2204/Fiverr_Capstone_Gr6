@@ -5,29 +5,63 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <>
-      <div className={css["footer-about"]}>
-        <div className={css["help"]}>
-          <h2>GET HELP</h2>
-          <Link to='/'>Home</Link>
-          <a href='https://www.nike.com'>Nike</a>
-          <a href='https://www.adidas.com'>Adidas</a>
-          <Link to='#'>Contact</Link>
+      <div className={css["footer"]}>
+        <div className={css["list"]}>
+          <h2>Categories</h2>
+          <Link to='#'>Graphics & Design</Link>
+          <Link to='#'>Digital Marketing</Link>
+          <Link to='#'>Writing & Translation</Link>
+          <Link to='#'>Video & Animation</Link>
+          <Link to='#'>Music & Audio</Link>
+          <Link to='#'>Programming & Tech</Link>
+          <Link to='#'>Data</Link>
+          <Link to='#'>Business</Link>
+          <Link to='#'>Lifestyle</Link>
+          <Link to='#'>Sitemap</Link>
+
         </div>
-        <div className={css["support"]}>
-          <h2>SUPPORT</h2>
-          <Link to='#'>About</Link>
-          <Link to='#'>Contact</Link>
-          <Link to='#'>Help</Link>
-          <Link to='#'>Phone</Link>
+        <div className={css["list"]}>
+          <h2>About</h2>
+          <Link to='#'>Careers</Link>
+          <Link to='#'>Press & News</Link>
+          <Link to='#'>Partnerships</Link>
+          <Link to='#'>Privacy Policy</Link>
+          <Link to='#'>Terms of Service</Link>
+          <Link to='#'>Intellectual Property Claims</Link>
+          <Link to='#'>Investor Relations</Link>
         </div>
-        <div className={css["register"]}>
-          <h2>REGISTER</h2>
-          <Link to='/register'>Register</Link>
-          <Link to="/login">Login</Link>
+        <div className={css["list"]}>
+          <h2>Support</h2>
+          <Link to='#'>Help & Support</Link>
+          <Link to='#'>Trust & Safety</Link>
+          <Link to='#'>Selling on Fiverr</Link>
+          <Link to='#'>Buying on Fiverr</Link>
+        </div>
+        <div className={css["list"]}>
+          <h2>Community</h2>
+          <Link to='#'>Customer Success Stories</Link>
+          <Link to='#'>Community Hub</Link>
+          <Link to='#'>Forum</Link>
+          <Link to='#'>Events</Link>
+          <Link to='#'>Blog</Link>
+          <Link to='#'>Influencers</Link>
+          <Link to='#'>Affiliates</Link>
+          <Link to='#'>Podcast</Link>
+          <Link to='#'>Become a Seller</Link>
+          <Link to='#'>Invite a Friend</Link>
+        </div>
+        <div className={css["list"]}>
+          <h2>Business Solutions</h2>
+          <Link to='#'>About Business Solutions</Link>
+          <Link to='#'>Fiverr Pro</Link>
+          <Link to='#'>Fiverr Certified</Link>
+          <Link to='#'>Fiverr Enterprise</Link>
+          <Link to='#'>Working Not Working</Link>
+          <Link to='#'>Contact Sales</Link>
         </div>
       </div>
       <div className={css["copyright"]}>
-        <p> © 2023 Cybersoft All Rights Reserved - Shoes Store | Design by Khanh Nguyen & Dao Ngo.</p>
+        <p> © 2023 Cybersoft All Rights Reserved - Fiverr | Design by Khanh Nguyen & Dao Ngo.</p>
       </div>
 
 

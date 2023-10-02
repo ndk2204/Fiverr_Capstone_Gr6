@@ -6,7 +6,7 @@ function ProductFeature() {
   const dataSP = useAppSelector((state) => state.productReducer.listProduct);
   return (
     <div>
-      <h2 className={css["heading"]}>Product Feature</h2>
+      <h2 className={css["heading"]}>Popular services</h2>
 
       {/* {list.map((item) => {
         return <Card key={item.id} data={item} />;

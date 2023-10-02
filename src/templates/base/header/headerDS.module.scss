@@ -1,0 +1,54 @@
+.header-left,
+.header-right,
+.header {
+  display: flex;
+  align-items: center;
+}
+.header-left .logo {
+  margin-right: 3rem;
+}
+.header {
+  justify-content: space-between;
+  height: 8rem;
+  padding: 0 5rem;
+}
+.navSearch {
+  display: flex;
+  position: relative;
+  input {
+    border: 1px solid  #888;
+    border-right: none;
+    border-radius: 3px 0 0 3px;
+    padding: 5px 5px;
+    padding-left: 3rem;
+  }
+}
+.btnSearch {
+  background-color: #2cca3c;
+  border-radius: 0 3px 3px 0;
+  padding: 2px 15px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  border: none;
+}
+.searchIcon{
+  position: absolute;
+  left: 8px;
+  top: 2px;
+  fill: #888;
+
+}
+.header-right {
+  gap: 2rem;
+  margin-right: 5rem;
+  a {
+    color: #888;
+    font-weight: 500;
+  }
+}
+.header-right .join {
+  color: #009e0f;
+  border: solid 2px #009e0f;
+  padding: 0.4rem 1.8rem;
+  border-radius: 0.3rem;
+}

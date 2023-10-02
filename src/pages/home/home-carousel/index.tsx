@@ -1,23 +1,12 @@
 import React, { useRef } from "react";
 import { Carousel } from "antd";
 import { CarouselRef } from "antd/es/carousel";
-import h1 from "src/assets/imgs/carousel/h1.png";
-import h2 from "src/assets/imgs/carousel/h2.png";
-import h3 from "src/assets/imgs/carousel/h3.png";
-import arrowLeft from "src/assets/imgs/carousel/arrleft.svg";
-import arrowRight from "src/assets/imgs/carousel/arrright.svg";
 
 import css from "./carousel.module.scss";
 import { Link } from "react-router-dom";
+import LogoIcon from "src/assets/icons/logo";
 
-// const contentStyle: React.CSSProperties = {
-//   margin: 0,
-//   height: "260px",
-//   color: "#fff",
-//   lineHeight: "160px",
-//   textAlign: "center",
-//   background: "#364d79",
-// };
+
 
 const HomeCarousel: React.FC = () => {
   const onChange = (currentSlide: number) => {
@@ -39,16 +28,7 @@ const HomeCarousel: React.FC = () => {
   return (
     <>
       <div className={css["carousel"]}>
-        <img
-          className={css["arrow-left"]}
-          onClick={handlePrev}
-          src={arrowLeft}
-        />
-        <img
-          className={css["arrow-right"]}
-          onClick={handleNext}
-          src={arrowRight}
-        />
+
 
         {/* Đối với những props có giá trị là true (autoplay) thì chỉ cần truyền tên không cần truyền cụ thể giá trị true */}
         <div className={css["carousel-img"]}>
@@ -58,13 +38,13 @@ const HomeCarousel: React.FC = () => {
             afterChange={onChange}
           >
             <div className={css["box-img"]}>
-              <img src={h1} />
+              {/* <img src={} /> */}
             </div>
             <div className={css["box-img"]}>
-              <img src={h2} />
+              {/* <img src={} /> */}
             </div>
             <div className={css["box-img"]}>
-              <img src={h3} />
+              {/* <img src={} /> */}
             </div>
           </Carousel>
         </div>
