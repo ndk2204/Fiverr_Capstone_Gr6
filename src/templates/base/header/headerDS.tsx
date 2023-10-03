@@ -4,6 +4,7 @@ import css from "./headerDS.module.scss";
 import { Link } from "react-router-dom";
 import Logo from "src/assets/icons/logo";
 import Search from "src/assets/icons/search"
+import MenuNav from "src/components/nav/nav";
 function HeaderDS() {
 
     return (
@@ -23,10 +24,11 @@ function HeaderDS() {
                 </div>
                 <div className={css["header-right"]}>
                     <Link to="/">Become a Seller</Link>
-                    <Link to="/login">Sign In</Link>
-                    <Link className={css.join} to="/register">Join</Link>
+                    <Link to="/register">Sign In</Link>
+                    <Link className={css.join} to="/login">Join</Link>
                 </div>
             </header>
+            <MenuNav/>
         </>
     );
 }

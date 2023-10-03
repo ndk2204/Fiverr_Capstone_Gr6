@@ -13,7 +13,7 @@ export const axiosWithoutAuth = axios.create({
 
 //Yeu cau dang nhap
 export const axiosWithAuth = axios.create({
-  baseURL: BASE_URL,
+  baseURL: "https://fiverrnew.cybersoft.edu.vn/api/cong-viec/lay-menu-loai-cong-viec",
   timeout: 180_000, // ms -> 3 phut, sau 3phut thi ngat ket noi
 });
 

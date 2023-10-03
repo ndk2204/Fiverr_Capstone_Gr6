@@ -4,9 +4,6 @@ import { CarouselRef } from "antd/es/carousel";
 
 import css from "./carousel.module.scss";
 import { Link } from "react-router-dom";
-import LogoIcon from "src/assets/icons/logo";
-
-
 
 const HomeCarousel: React.FC = () => {
   const onChange = (currentSlide: number) => {

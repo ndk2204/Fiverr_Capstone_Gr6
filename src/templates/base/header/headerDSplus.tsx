@@ -31,8 +31,8 @@ function HeaderDSplus() {
                     <span>
                         US$ USD</span>
                     <Link to="/">Become a Seller</Link>
-                    <Link to="/login">Sign In</Link>
-                    <Link className={css.join} to="/register">Join</Link>
+                    <Link to="/register">Sign In</Link>
+                    <Link className={css.join} to="/login">Join</Link>
                 </div>
             </header>
         </>
