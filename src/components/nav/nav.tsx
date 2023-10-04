@@ -30,11 +30,11 @@ function MenuNav() {
     <ul className={css.nav}>
       {listMenu.map((item: any, index: number) => {
         return (
-          <div  className="menuDrop" key={index}>
+          <div  className={css.menuDrop} key={index}>
             <div>{item.tenLoaiCongViec}</div>
               {item.dsNhomChiTietLoai.map((sub: any, number: number) => {
                 return (
-                  <div key={number} className="dropDown">
+                  <div key={number} className={css.dropDown}>
                     <a>{sub.tenNhom}</a>
 
                     {sub.dsChiTietLoai.map((subMenu: any, stt: number) => {
