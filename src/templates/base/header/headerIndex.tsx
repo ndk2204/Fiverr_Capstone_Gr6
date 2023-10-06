@@ -8,7 +8,7 @@ function HeaderIndex() {
   return (
     <>
       <header className={css.header}>
-        <Link to="/">
+        <Link className={css.logoIndex} to="/">
           <Logo />
         </Link>
         <div className={css["header-right"]}>

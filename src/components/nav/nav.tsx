@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import css from "./nav.module.scss";
 import { Link } from "react-router-dom";
 import { axiosWithAuth } from "src/services/config.service";
@@ -24,29 +24,43 @@ function MenuNav() {
       dispatch(action);
     })();
   }, []);
-  console.log(listMenu);
+
+  const [isActive, setIsActive] = useState(false);
 
   return (
     <ul className={css.nav}>
       {listMenu.map((item: any, index: number) => {
         return (
-          <div  className={css.menuDrop} key={index}>
+          <div
+            key={index}
+            onMouseEnter={() => {
+              setIsActive(true);
+            }}
+            onMouseLeave={() => {
+              setIsActive(false);
+            }}
+            onClick={()=>{
+              // e.target
+              console.log('e')
+            }}
+            className={isActive ? `menu active ` : "menu"}
+          >
             <div>{item.tenLoaiCongViec}</div>
-              {item.dsNhomChiTietLoai.map((sub: any, number: number) => {
-                return (
-                  <div key={number} className={css.dropDown}>
-                    <a>{sub.tenNhom}</a>
+            {item.dsNhomChiTietLoai.map((sub: any, number: number) => {
+              return (
+                <div className="menuDrop" key={number}>
+                  <a>{sub.tenNhom}</a>
 
-                    {sub.dsChiTietLoai.map((subMenu: any, stt: number) => {
-                      return (
-                        <p key={stt} className={css.sub}>
-                          {subMenu.tenChiTiet}
-                        </p>
-                      );
-                    })}
-                  </div>
-                );
-              })}
+                  {sub.dsChiTietLoai.map((subMenu: any, stt: number) => {
+                    return (
+                      <p key={stt} className={css.sub}>
+                        {subMenu.tenChiTiet}
+                      </p>
+                    );
+                  })}
+                </div>
+              );
+            })}
           </div>
         );
       })}
