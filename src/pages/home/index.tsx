@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import ProductFeature from "./product-feature";
-import HomeCarousel from "./home-carousel";
+import AboutIndex from "./about-index";
 
 //Các hook cần sử dụng với redux
 // useSelector: lấy store từ trên redux về
@@ -14,7 +14,7 @@ function Home() {
 
   return (
     <div>
-      <HomeCarousel />
+      <AboutIndex />
       <ProductFeature />
     </div>
   );
