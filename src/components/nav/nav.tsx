@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import css from "./nav.module.scss";
 import { Link } from "react-router-dom";
 import { axiosWithAuth } from "src/services/config.service";
 import { useAppSelector } from "src/redux/config-store";
@@ -10,6 +9,7 @@ function MenuNav() {
   const listMenu = useAppSelector((state) => {
     return state.productReducer.listMenu;
   });
+  // console.log(listMenu);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -28,24 +28,22 @@ function MenuNav() {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <ul className={css.nav}>
+    <ul className="nav">
       {listMenu.map((item: any, index: number) => {
         return (
           <div
             key={index}
-            onMouseEnter={() => {
-              setIsActive(true);
-            }}
-            onMouseLeave={() => {
-              setIsActive(false);
-            }}
-            onClick={()=>{
-              // e.target
-              console.log('e')
-            }}
+            // onMouseEnter={() => {
+            //   setIsActive(true);
+            // }}
+            // onMouseLeave={() => {
+            //   setIsActive(false);
+            // }}
             className={isActive ? `menu active ` : "menu"}
           >
-            <div>{item.tenLoaiCongViec}</div>
+            <Link to={`/loaicv/${item.id}`} className="loaiCV">
+              {item.tenLoaiCongViec}
+            </Link>
             {item.dsNhomChiTietLoai.map((sub: any, number: number) => {
               return (
                 <div className="menuDrop" key={number}>
@@ -53,7 +51,7 @@ function MenuNav() {
 
                   {sub.dsChiTietLoai.map((subMenu: any, stt: number) => {
                     return (
-                      <p key={stt} className={css.sub}>
+                      <p key={stt} className="sub">
                         {subMenu.tenChiTiet}
                       </p>
                     );

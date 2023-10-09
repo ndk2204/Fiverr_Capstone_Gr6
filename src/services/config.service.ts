@@ -17,6 +17,11 @@ export const axiosWithAuth = axios.create({
   timeout: 180_000, // ms -> 3 phut, sau 3phut thi ngat ket noi
 });
 
+export const axiosFiver = axios.create({
+  baseURL: "https://fiverrnew.cybersoft.edu.vn/api/cong-viec",
+  timeout: 180_000, // ms -> 3 phut, sau 3phut thi ngat ket noi
+});
+
 // interceptor: đính kèm một vài thông tin trước khi gửi yêu cầu gì đó đi
 axiosWithAuth.interceptors.request.use(
   (config) => {

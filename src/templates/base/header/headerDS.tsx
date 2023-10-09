@@ -23,7 +23,7 @@ function HeaderDS() {
                     </div>
                 </div>
                 <div className={css["header-right"]}>
-                    <Link to="/">Become a Seller</Link>
+                    <Link to="/danhsach">Become a Seller</Link>
                     <Link to="/register">Sign In</Link>
                     <Link className={css.join} to="/login">Join</Link>
                 </div>

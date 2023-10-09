@@ -30,6 +30,7 @@ function Detail() {
         console.log(err);
       });
   }, [params.productId]);
+  
   const handleClick = () => {
     let localData = getLocalStorage("localCarts");
     const item = { ...productItem, quantity };

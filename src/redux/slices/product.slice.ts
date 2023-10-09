@@ -5,16 +5,15 @@ import { getLocalStorage } from "src/utils";
 
 type TState = {
   listProduct: TCardItem[];
-  gioHang: TCardItem[];
   listMenu: any;
+  listTimKiem: any
 };
 
-let dataLocal = getLocalStorage("localCarts");
 
 const initialState: TState = {
   listProduct: [],
-  gioHang :dataLocal,
-  listMenu:[],
+  listMenu: [],
+  listTimKiem: [],
 };
 
 const productSlice = createSlice({
@@ -26,18 +25,17 @@ const productSlice = createSlice({
       state.listProduct = action.payload;
     },
 
-    setgioHang: (state, action) => {
-      state.gioHang = action.payload;
-    },
-
     setListMenu: (state, action) => {
       state.listMenu = action.payload;
+    },
+    setListTimKiem: (state, action) => {
+      state.listTimKiem = action.payload;
     },
   },
 });
 
 // Bóc tách ra action creator của Redux
-export const { setListProduct,setgioHang,setListMenu } = productSlice.actions;
+export const { setListProduct, setListMenu, setListTimKiem } = productSlice.actions;
 
 //productSlice tạo ra hàm reducer, chấm đến để sử dụng reducer
 export default productSlice.reducer;

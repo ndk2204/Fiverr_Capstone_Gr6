@@ -1,11 +1,11 @@
 import { useEffect } from "react";
-import ProductFeature from "./product-feature";
 import AboutIndex from "./about-index";
 
 //Các hook cần sử dụng với redux
 // useSelector: lấy store từ trên redux về
 // useDispatch: set lại state trên redux
 import { useAppSelector } from "src/redux/config-store";
+import PopularServices from "./popular-services";
 
 function Home() {
   const listProduct = useAppSelector((state) => {
@@ -15,7 +15,7 @@ function Home() {
   return (
     <div>
       <AboutIndex />
-      <ProductFeature />
+      <PopularServices/>
     </div>
   );
 }
