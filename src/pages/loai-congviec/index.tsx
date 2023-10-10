@@ -8,11 +8,10 @@ type TParams = {
 };
 
 function DSLoaiCV() {
-
   const listMenu = useAppSelector((state) => {
     return state.productReducer.listMenu;
   });
-  
+
   const [title, setTitle] = useState();
   const params = useParams<TParams>();
 
@@ -32,16 +31,16 @@ function DSLoaiCV() {
       <div className="explorer">
         <h2>Explorer {title} </h2>
         <div className="dsNhom">
-          {dataNhom?.map((item: any) => {
+          {dataNhom?.map((item: any, index:number) => {
             return (
-              <div className="item">
+              <div key={index} className="item">
                 <div className="img">
                   <img className="img-fluid" src={item.hinhAnh} />
                 </div>
                 <div>
                   <h3>{item.tenNhom}</h3>
-                  {item.dsChiTietLoai.map((sub: any) => {
-                    return <p>{sub.tenChiTiet}</p>;
+                  {item.dsChiTietLoai.map((sub: any, index:number) => {
+                    return <p key={index}>{sub.tenChiTiet}</p>;
                   })}
                 </div>
               </div>

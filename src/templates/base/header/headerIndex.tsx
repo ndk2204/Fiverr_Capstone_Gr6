@@ -4,7 +4,6 @@ import css from "./headerIndex.module.scss";
 import { Link } from "react-router-dom";
 import Logo from "src/assets/icons/logo";
 function HeaderIndex() {
-
   return (
     <>
       <header className={css.header}>
@@ -12,9 +11,11 @@ function HeaderIndex() {
           <Logo />
         </Link>
         <div className={css["header-right"]}>
-        <Link to="/danhsach">Become a Seller</Link>
+          <Link to="/danhsach/marketing">Become a Seller</Link>
           <Link to="/register">Sign In</Link>
-          <Link className={css.join} to="/login">Join</Link>
+          <Link className={css.join} to="/login">
+            Join
+          </Link>
         </div>
       </header>
     </>

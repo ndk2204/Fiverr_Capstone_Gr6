@@ -161,7 +161,6 @@ a {
   .item {
     height: 345px;
     // width: 260px !important;
-    color: white;
     padding: 0 18px;
     p {
       font-size: 14px;
@@ -170,6 +169,9 @@ a {
     h2 {
       font-size: 24px;
       margin-bottom: 0;
+    }
+    a {
+      color: white;
     }
   }
   .itemServices7,
@@ -291,9 +293,9 @@ a {
     background-color: #f5f5f5;
     margin: 0 -5rem;
   }
-  .result{
-    h2{
-      font-size: 25px;  
+  .result {
+    h2 {
+      font-size: 25px;
     }
     padding: 2rem 0 3rem;
   }

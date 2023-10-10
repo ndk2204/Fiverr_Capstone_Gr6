@@ -6,7 +6,6 @@ type Props = {
 };
 
 function ListCard(props: Props) {
-  console.log(props)
   return (
     <div className={css["list-card"]}>
       {props.list.map((item) => {

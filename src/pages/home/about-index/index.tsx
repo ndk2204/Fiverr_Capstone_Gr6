@@ -6,38 +6,21 @@ import mt from "src/assets/imgs/meta.png";
 import nf from "src/assets/imgs/netflix.png";
 import pg from "src/assets/imgs/pg.png";
 import pp from "src/assets/imgs/paypal.png";
-import { axiosFiver } from "src/services/config.service";
-import { useAppSelector } from "src/redux/config-store";
-import { setListTimKiem } from "src/redux/slices/product.slice";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { setLocalStorage } from "src/utils";
+import { Link, useNavigate } from "react-router-dom";
 
 function AboutIndex() {
   const [timkiem, setTimKiem] = useState();
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleChange = (e: any) => {
     setTimKiem(e.target.value);
   };
-
   const handleClick = () => {
-    setLocalStorage("timkiem", timkiem);
-    (async () => {
-      const resp = await axiosFiver({
-        url: `/lay-danh-sach-cong-viec-theo-ten/${timkiem}`,
-        headers: {
-          tokenCybersoft: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA1MDA4IiwiSGV0SGFuU3RyaW5nIjoiMjgvMDEvMjAyNCIsIkhldEhhblRpbWUiOiIxNzA2NDAwMDAwMDAwIiwibmJmIjoxNjc3NDMwODAwLCJleHAiOjE3MDY1NDc2MDB9.eo3y0MmcjE8Jl4fRzUJLBoZzylEeFDcUTfWXvtb1hdc`,
-        },
-      });
-      const action = setListTimKiem(resp.data.content);
-      let data = resp.data.content;
-      dispatch(action);
-      if (data.length > 0) {
-        navigate("/danhsach");
-      }
-    })();
+    if (timkiem == null) {
+      alert("Vui lòng nhập lại");
+    } else {
+      navigate(`/danhsach/${timkiem}`);
+    }
   };
 
   return (
@@ -74,16 +57,19 @@ function AboutIndex() {
               Popular:
               <ul>
                 <li>
-                  <a href="">Website Design</a>
+                  <Link to={"/danhsach/Website"}>Website</Link>
                 </li>
                 <li>
-                  <a href="">WordPress</a>
+                  <Link to={"/danhsach/Marketing"}>Marketing</Link>
                 </li>
                 <li>
-                  <a href="">Logo Design</a>
+                  <Link to={"/danhsach/Design"}> Design</Link>
                 </li>
                 <li>
-                  <a href="">Dropshipping</a>
+                  <Link to={"/danhsach/instagram"}> Instagram</Link>
+                </li>
+                <li>
+                  <Link to={"/danhsach/Dropshipping"}>Dropshipping</Link>
                 </li>
               </ul>
             </div>

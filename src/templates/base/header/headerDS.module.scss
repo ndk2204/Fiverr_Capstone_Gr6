@@ -16,10 +16,11 @@
   display: flex;
   position: relative;
   input {
+    width: 30rem;
     border: 1px solid  #888;
     border-right: none;
     border-radius: 3px 0 0 3px;
-    padding: 5px 5px;
+    padding: 6px 5px;
     padding-left: 3rem;
   }
 }

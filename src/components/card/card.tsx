@@ -1,6 +1,7 @@
 import React from "react";
 import css from "./card.module.scss";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 export type TCard = {
   id: number;
@@ -18,7 +19,7 @@ type Props = {
 
 export function Card(props: Props) {
   const { data } = props;
-  console.log(data);
+  console.log(data)
   return (
     <div className={css["card"]}>
       <div className={css["img"]}>
@@ -45,10 +46,12 @@ export function Card(props: Props) {
       </div>
       <div className={css["footer"]}>
         <i className="fa-solid fa-heart"></i>
-        <div className={css["at"]}>
-          STARTING AT
-          <span> {data.congViec.giaTien}$</span>
-        </div>
+        <Link to={`/chitiet/${data.id}`}>
+          <div className={css["at"]}>
+            STARTING AT
+            <span> {data.congViec.giaTien}$</span>
+          </div>
+        </Link>
       </div>
     </div>
   );
