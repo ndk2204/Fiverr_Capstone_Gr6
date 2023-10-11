@@ -19,12 +19,12 @@ type Props = {
 
 export function Card(props: Props) {
   const { data } = props;
-  console.log(data)
+  console.log(data);
   return (
     <div className={css["card"]}>
-      <div className={css["img"]}>
+      <Link to={`/chitiet/${data.id}`} className={css["img"]}>
         <img src={data.congViec.hinhAnh} />
-      </div>
+      </Link>
       <div className={css["content"]}>
         <div className={css["user"]}>
           <div className={css["avatar"]}>

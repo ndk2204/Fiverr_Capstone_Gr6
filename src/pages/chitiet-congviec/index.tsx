@@ -11,8 +11,6 @@ function ChiTietCV() {
     return state.productReducer.listTimKiem;
   });
   const params = useParams<TParams>();
-  console.log(listTimKiem);
-  console.log(params.maso);
   const [data, setData] = useState();
   useEffect(() => {
     listTimKiem.map((item: any) => {
@@ -24,21 +22,43 @@ function ChiTietCV() {
     [params.maso];
   console.log(data);
   return (
-    <div>
+    <div className="chiTietCV">
       <div className="duongDanCV">
-        <a>
-          {data?.tenLoaiCongViec} {` > `}
-        </a>
-        <a>
-          {" "}
-          {data?.tenNhomChiTietLoai} {` > `}{" "}
-        </a>
+        <a>{data?.tenLoaiCongViec} </a>
+        <i class="fa-solid fa-angle-right"></i>
+        <a> {data?.tenNhomChiTietLoai} </a>
+        <i class="fa-solid fa-angle-right"></i>
         <a> {data?.tenChiTietLoai}</a>
       </div>
       <h2 className="tenCV">{data?.congViec.tenCongViec}</h2>
-    <div className="user">
-        
-    </div>
+      <div className="user">
+        <div className="avatar">
+          <img src={data?.avatar} />
+        </div>
+        <h4 className="mb-0 name">{data?.tenNguoiTao}</h4>
+        <h4 className="mb-0 rate-title">Top Rated Seller</h4>
+
+        <div className="rate">
+          <div>
+            <i className="fa-solid fa-star"></i> {data?.congViec.saoCongViec} (
+            {data?.congViec.danhGia})
+          </div>
+        </div>
+        <p className="mb-0 order">
+          {data?.congViec.maChiTietLoaiCongViec} Orders in Queue
+        </p>
+      </div>
+      <div className="hinhAnh">
+        <img src={data?.congViec.hinhAnh} />
+      </div>
+      <div className="information">
+        <h2 className="info">About This {data?.tenChiTietLoai}</h2>
+        <h3 className="seller">Top Rated Seller with all positive reviews</h3>
+        <p>Hello,</p>
+        <p className="motaNgan">{data?.congViec.moTaNgan}</p>
+        <h3>Things I offer:</h3>
+        <p className="moTaThing">{data?.congViec.moTa}</p>
+      </div>
     </div>
   );
 }

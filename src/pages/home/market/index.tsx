@@ -25,14 +25,57 @@ function Market() {
         </div>
       </div>
       <div className="exploreMarket">
-    <div className="listIcon">
-      <div className="item">
-        <div className="img">
-          <img src="/Fiverr_Capstone_Gr6/src/assets/icons/icon-index/graphics-design.svg" />
+        <h1>Explorer the marketplace</h1>
+        <div className="listIcon container">
+          <div className="item">
+            <div className="img">
+              <img src="/src/assets/icons/icon-index/graphics-design.svg" />
+            </div>
+            <h4>Graphics & Design</h4>
+          </div>
+          <div className="item">
+            <div className="img">
+              <img src="/src/assets/icons/icon-index/marketing.svg" />
+            </div>
+            <h4>Digital Marketing</h4>
+          </div>
+          <div className="item">
+            <div className="img">
+              <img src="/src/assets/icons/icon-index//writing.svg" />
+            </div>
+            <h4>Writing & Translation</h4>
+          </div>
+          <div className="item">
+            <div className="img">
+              <img src="/src/assets/icons/icon-index/video-animation.svg" />
+            </div>
+            <h4>Video & Animation</h4>
+          </div>
+          <div className="item">
+            <div className="img">
+              <img src="/src/assets/icons/icon-index/music-audio.svg" />
+            </div>
+            <h4>Music & Audio</h4>
+          </div>
+          <div className="item">
+            <div className="img">
+              <img src="/src/assets/icons/icon-index/programming.svg" />
+            </div>
+            <h4>Programming & Tech</h4>
+          </div>
+          <div className="item">
+            <div className="img">
+              <img src="/src/assets/icons/icon-index/lifestyle.svg" />
+            </div>
+            <h4>Lifestyle</h4>
+          </div>
+          <div className="item">
+            <div className="img">
+              <img src="/src/assets/icons/icon-index/data.svg" />
+            </div>
+            <h4>Data</h4>
+          </div>
         </div>
-        <h4>Graphic</h4>
-      </div>
-    </div>
       </div>
     </div>
   );
