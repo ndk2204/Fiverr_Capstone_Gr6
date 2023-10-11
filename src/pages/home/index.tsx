@@ -1,21 +1,15 @@
-import { useEffect } from "react";
 import AboutIndex from "./about-index";
-
-//Các hook cần sử dụng với redux
-// useSelector: lấy store từ trên redux về
-// useDispatch: set lại state trên redux
-import { useAppSelector } from "src/redux/config-store";
+import Market from "./market";
+import MoreServices from "./more-services";
 import PopularServices from "./popular-services";
 
 function Home() {
-  const listProduct = useAppSelector((state) => {
-    return state.productReducer.listProduct;
-  });
-
   return (
     <div>
       <AboutIndex />
-      <PopularServices/>
+      <PopularServices />
+      <MoreServices />
+      <Market />
     </div>
   );
 }
