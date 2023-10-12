@@ -11,7 +11,7 @@ function ChiTietCV() {
     return state.productReducer.listTimKiem;
   });
   const params = useParams<TParams>();
-  const [data, setData] = useState();
+  const [data, setData] = useState<any>();
   useEffect(() => {
     listTimKiem.map((item: any) => {
       if (item.id == params.maso) {
@@ -25,9 +25,9 @@ function ChiTietCV() {
     <div className="chiTietCV">
       <div className="duongDanCV">
         <a>{data?.tenLoaiCongViec} </a>
-        <i class="fa-solid fa-angle-right"></i>
+        <i className="fa-solid fa-angle-right"></i>
         <a> {data?.tenNhomChiTietLoai} </a>
-        <i class="fa-solid fa-angle-right"></i>
+        <i className="fa-solid fa-angle-right"></i>
         <a> {data?.tenChiTietLoai}</a>
       </div>
       <h2 className="tenCV">{data?.congViec.tenCongViec}</h2>

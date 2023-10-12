@@ -25,13 +25,23 @@ function DSLoaiCV() {
     });
   }, [params.loaiCV]);
   let dataNhom = getLocalStorage("data");
-
+  console.log(dataNhom);
   return (
     <>
+      <div className="aboutLoaiCV">
+        <div className="img-bg">
+          <h1>{title}</h1>
+          <p>{title} to make you stand out</p>
+          <button type="button" className="btn btn-outline-dark">
+            Dark
+          </button>
+        </div>
+      </div>
+
       <div className="explorer">
         <h2>Explorer {title} </h2>
         <div className="dsNhom">
-          {dataNhom?.map((item: any, index:number) => {
+          {dataNhom?.map((item: any, index: number) => {
             return (
               <div key={index} className="item">
                 <div className="img">
@@ -39,7 +49,7 @@ function DSLoaiCV() {
                 </div>
                 <div>
                   <h3>{item.tenNhom}</h3>
-                  {item.dsChiTietLoai.map((sub: any, index:number) => {
+                  {item.dsChiTietLoai.map((sub: any, index: number) => {
                     return <p key={index}>{sub.tenChiTiet}</p>;
                   })}
                 </div>

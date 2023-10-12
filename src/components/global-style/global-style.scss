@@ -321,6 +321,8 @@ a {
         }
       }
       i {
+        display: block;
+        width: 80%;
         color: #0d643b;
         font-size: 20px;
       }
@@ -336,6 +338,7 @@ a {
       flex-wrap: wrap;
       margin: 0 auto;
       .item {
+        color: black;
         text-align: center;
         position: relative;
         width: 160px;
@@ -364,6 +367,12 @@ a {
   }
 }
 // danh sach - explorer ---------------------------
+.aboutLoaiCV{
+  .img-bg{
+background-image: url(/src/assets/imgs/Bgdesign.png);
+  }
+}
+
 .explorer {
   padding: 5rem;
   h2 {

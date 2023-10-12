@@ -19,7 +19,6 @@ type Props = {
 
 export function Card(props: Props) {
   const { data } = props;
-  console.log(data);
   return (
     <div className={css["card"]}>
       <Link to={`/chitiet/${data.id}`} className={css["img"]}>
