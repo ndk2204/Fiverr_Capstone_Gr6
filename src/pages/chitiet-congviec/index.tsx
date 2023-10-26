@@ -58,6 +58,8 @@ function ChiTietCV() {
         <p className="motaNgan">{data?.congViec.moTaNgan}</p>
         <h3>Things I offer:</h3>
         <p className="moTaThing">{data?.congViec.moTa}</p>
+        <h3>I will do the work until you are satisfied with jast and responsite communication.</h3>
+
       </div>
     </div>
   );

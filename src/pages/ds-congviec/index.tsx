@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ListCard from "src/components/list-card";
 import { useAppSelector } from "src/redux/config-store";
 import { setListTimKiem } from "src/redux/slices/product.slice";
@@ -30,30 +30,60 @@ function DSCongViec() {
       dispatch(action);
     })();
   }, [params.search]);
+  const handleDrop = () => {
+    setDrop(drop === "off" ? "on" : "off");
+  };
+  const [drop, setDrop] = useState("off");
 
   return (
     <>
       <div className="danhsachCV">
         <div className="suggest">
-          <h4>Suggested</h4>
+          <h4 className="mb-0">Suggested</h4>
           <ul>
-            <li>html</li>
-            <li>css</li>
-            <li>design</li>
-            <li>marketing</li>
-            <li>music</li>
-            <li>video</li>
-            <li>data</li>
+            <Link to={"/danhsach/html"}>html</Link>
+            <Link to={"/danhsach/css"}>css</Link>
+            <Link to={"/danhsach/design"}>design</Link>
+            <Link to={"/danhsach/marketing"}>marketing</Link>
+            <Link to={"/danhsach/video"}>video</Link>
+            <Link to={"/danhsach/music"}>music</Link>
+            <Link to={"/danhsach/data"}>data</Link>
+            <Link to={"/danhsach/animation"}>animation</Link>
+            <Link to={"/danhsach/digital"}>digital</Link>
           </ul>
         </div>
         <div className="result">
           <h2>Results for "{timkiem}"</h2>
           <ul>
-            <li>Category</li>
-            <li>Service Options</li>
-            <li>Seller Detail</li>
-            <li>Budget</li>
-            <li>Delivery Time</li>
+            <li onClick={handleDrop}>
+              Category
+              <i className="fa-solid fa-angle-down"></i>
+            </li>
+            <li onClick={handleDrop}>
+              Service Options
+              <i className="fa-solid fa-angle-down"></i>
+            </li>
+            <li onClick={handleDrop}>
+              Seller Detail
+              <i className="fa-solid fa-angle-down"></i>
+            </li>
+            <li onClick={handleDrop}>
+              Budget
+              <i className="fa-solid fa-angle-down"></i>
+            </li>
+            <li onClick={handleDrop}>
+              Delivery Time
+              <i className="fa-solid fa-angle-down"></i>
+            </li>
+            {drop === "on" ? (
+              <div className="dropResult">
+                <p>Options</p>
+                <p>Category</p>
+                <p>Detail</p>
+              </div>
+            ) : (
+              <div></div>
+            )}
           </ul>
         </div>
         <ListCard list={listTimKiem} />

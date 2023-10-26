@@ -28,49 +28,49 @@ function Market() {
       <div className="exploreMarket">
         <h1>Explorer the marketplace</h1>
         <div className="listIcon container">
-          <Link to={'/loaiCV/1'} className="item">
+          <Link to={'/loaicv/1'} className="item">
             <div className="img">
               <img src="/src/assets/icons/icon-index/graphics-design.svg" />
             </div>
             <h4>Graphics & Design</h4>
           </Link>
-          <Link to={'loaiCV/2'} className="item">
+          <Link to={'loaicv/2'} className="item">
             <div className="img">
               <img src="/src/assets/icons/icon-index/marketing.svg" />
             </div>
             <h4>Digital Marketing</h4>
           </Link>
-          <Link to={'loaiCV/3'} className="item">
+          <Link to={'loaicv/3'} className="item">
             <div className="img">
               <img src="/src/assets/icons/icon-index//writing.svg" />
             </div>
             <h4>Writing & Translation</h4>
           </Link>
-          <Link to={'loaiCV/4'} className="item">
+          <Link to={'loaicv/4'} className="item">
             <div className="img">
               <img src="/src/assets/icons/icon-index/video-animation.svg" />
             </div>
             <h4>Video & Animation</h4>
           </Link>
-          <Link to={'loaiCV/5'} className="item">
+          <Link to={'loaicv/5'} className="item">
             <div className="img">
               <img src="/src/assets/icons/icon-index/music-audio.svg" />
             </div>
             <h4>Music & Audio</h4>
           </Link>
-          <Link to={'loaiCV/6'} className="item">
+          <Link to={'loaicv/6'} className="item">
             <div className="img">
               <img src="/src/assets/icons/icon-index/programming.svg" />
             </div>
             <h4>Programming & Tech</h4>
           </Link>
-          <Link to={'loaiCV/7'} className="item">
+          <Link to={'loaicv/7'} className="item">
             <div className="img">
               <img src="/src/assets/icons/icon-index/lifestyle.svg" />
             </div>
             <h4>Lifestyle</h4>
           </Link>
-          <Link to={'loaiCV/8'} className="item">
+          <Link to={'loaicv/8'} className="item">
             <div className="img">
               <img src="/src/assets/icons/icon-index/data.svg" />
             </div>
